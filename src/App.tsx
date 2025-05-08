@@ -19,12 +19,14 @@ import ResetPasswordPage from './pages/auth/ResetPasswordPage';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import { SearchProvider } from './context/SearchContext';
 import SearchResults from './components/search/SearchResults';
+import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <SearchProvider>
+          <ScrollToTop />
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">
