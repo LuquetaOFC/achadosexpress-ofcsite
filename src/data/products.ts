@@ -39,12 +39,14 @@ export const products: Product[] = [
     details: 'Mounja Fit Black é um suplemento revolucionário que combina extratos naturais cientificamente comprovados para potencializar o emagrecimento. Sua fórmula exclusiva atua em múltiplas frentes: acelera o metabolismo, reduz a absorção de gorduras e carboidratos, e promove a sensação de saciedade. Desenvolvido por especialistas em nutrição, é seguro e eficaz para homens e mulheres.',
     usage: 'Para resultados otimizados:\n- Tomar 2 cápsulas 30 minutos antes do café da manhã\n- Beber no mínimo 2 litros de água por dia\n- Manter uma alimentação equilibrada\n- Praticar atividades físicas regularmente\n- Evitar consumo após as 18h para não interferir no sono',
     benefits: [
-      'Aceleração do metabolismo e queima de gordura localizada',
-      'Redução do apetite e controle da ansiedade alimentar',
-      'Aumento significativo da energia e disposição física',
-      'Melhora do funcionamento intestinal',
-      'Redução da retenção de líquidos',
-      'Resultados visíveis em 15-30 dias de uso contínuo'
+      'Acelera o metabolismo, potencializando a queima de gordura',
+      'Reduz o apetite e controla a compulsão alimentar',
+      'Fornece energia extra para atividades físicas',
+      'Diminui a retenção de líquidos',
+      'Melhora a digestão e o trânsito intestinal',
+      'Resultados visíveis em até 15 dias de uso contínuo',
+      'Elimina gordura localizada, especialmente na região abdominal',
+      'Não causa efeito rebote após a interrupção do uso'
     ],
     variants: [
       { quantity: 1, price: 127.00, link: 'https://entrega.logzz.com.br/pay/memeq6yxw/ivmeq-1-unidade-127' },
@@ -72,12 +74,14 @@ export const products: Product[] = [
     details: 'Lipo Extremo é um termogênico revolucionário que combina ingredientes naturais de alta potência para maximizar a queima de gordura. Sua fórmula exclusiva atua 24 horas por dia, acelerando o metabolismo mesmo durante o repouso. Desenvolvido por especialistas em biotecnologia, oferece resultados comprovados cientificamente.',
     usage: 'Para máxima eficácia:\n- Tomar 1 cápsula 30 minutos antes do café da manhã\n- Tomar 1 cápsula 30 minutos antes do almoço\n- Manter intervalo mínimo de 6 horas entre as doses\n- Consumir ao menos 3 litros de água por dia\n- Não tomar após as 17h para não prejudicar o sono\n- Combinar com exercícios físicos regulares',
     benefits: [
-      'Queima de gordura acelerada mesmo em repouso',
-      'Supressão do apetite por até 8 horas',
-      'Aumento significativo da energia e disposição',
-      'Melhora do condicionamento físico',
-      'Preservação da massa muscular durante o emagrecimento',
-      'Resultados visíveis a partir da primeira semana de uso'
+      'Queima acelerada de gordura corporal',
+      'Efeito termogênico que aumenta a temperatura corporal e gasto calórico',
+      'Redução significativa de medidas em áreas problemáticas',
+      'Supressão do apetite por longos períodos',
+      'Aumento da disposição física e mental',
+      'Facilita a definição muscular',
+      'Potencializa os resultados de dietas e exercícios',
+      'Melhora o condicionamento físico durante treinos'
     ],
     variants: [
       { quantity: 1, price: 147.00, link: 'https://entrega.logzz.com.br/pay/mempy4oe0/lipoextremo1pote147' },
@@ -100,12 +104,14 @@ export const products: Product[] = [
     details: 'MenoGold é um suplemento inovador que combina fitoestrogênios, vitaminas e minerais essenciais para equilibrar os hormônios durante a menopausa. Sua fórmula exclusiva foi desenvolvida por ginecologistas e endocrinologistas para proporcionar alívio efetivo dos sintomas mais incômodos desta fase.',
     usage: 'Para resultados ideais:\n- Tomar 1 cápsula pela manhã e 1 cápsula à noite\n- Ingerir com água em temperatura ambiente\n- Manter uso contínuo por pelo menos 3 meses\n- Pode ser tomado com ou sem alimentos\n- Armazenar em local fresco e seco\n- Consultar médico em caso de uso de outros medicamentos',
     benefits: [
-      'Redução significativa das ondas de calor e suores noturnos',
-      'Melhora expressiva da qualidade do sono',
-      'Equilíbrio hormonal natural e duradouro',
-      'Aumento da disposição física e mental',
-      'Fortalecimento ósseo e prevenção da osteoporose',
-      'Melhora do humor e redução da irritabilidade'
+      'Reduz drasticamente as ondas de calor e suores noturnos',
+      'Equilibra os níveis hormonais naturalmente',
+      'Diminui a irritabilidade e oscilações de humor',
+      'Melhora a qualidade do sono',
+      'Combate a secura vaginal e desconfortos íntimos',
+      'Previne a perda óssea associada à menopausa',
+      'Aumenta a disposição física e mental',
+      'Promove bem-estar integral durante o climatério'
     ],
     variants: [
       { quantity: 1, price: 197.00, link: 'https://entrega.logzz.com.br/pay/mem4867d6/tratamento-1-meses---1-potes' },
@@ -129,12 +135,14 @@ export const products: Product[] = [
     details: 'LovelyGummy revoluciona o conceito de suplementação de colágeno com sua fórmula exclusiva que combina colágeno hidrolisado de alta biodisponibilidade, biotina, zinco, vitamina C e ácido hialurônico. Desenvolvida por especialistas em dermatologia e nutrição, proporciona resultados visíveis na beleza dos cabelos, pele e unhas.',
     usage: 'Para máxima eficácia:\n- Consumir 2 gomas por dia\n- Pode ser consumido a qualquer hora\n- Mastigar bem antes de engolir\n- Manter uso contínuo por pelo menos 90 dias\n- Armazenar em local fresco e seco\n- Não exceder a quantidade recomendada',
     benefits: [
-      'Fortalecimento e crescimento acelerado dos cabelos',
-      'Redução significativa de rugas e linhas de expressão',
-      'Aumento da elasticidade e hidratação da pele',
-      'Fortalecimento e crescimento acelerado das unhas',
-      'Redução da queda capilar em até 80%',
-      'Resultados visíveis a partir de 30 dias de uso'
+      'Fortalece os fios, reduzindo quebra e queda',
+      'Aumenta o brilho e a resistência do cabelo',
+      'Melhora a elasticidade e hidratação da pele',
+      'Reduz rugas finas e melhora a textura cutânea',
+      'Fortalece as unhas, evitando quebras e lascas',
+      'Acelera o crescimento de cabelos e unhas',
+      'Combate os radicais livres com potente ação antioxidante',
+      'Formato de goma saborosa facilita a adesão ao tratamento'
     ],
     variants: [
       { quantity: 1, price: 149.99, link: 'https://entrega.logzz.com.br/pay/memmgoeyv/lovely-gummy-desconto' },
@@ -159,12 +167,14 @@ export const products: Product[] = [
     details: 'O Tônico MXD20 Barbudom é resultado de anos de pesquisa em tricologia e dermatologia. Sua fórmula exclusiva combina minoxidil 20% com extratos naturais que potencializam o crescimento dos fios e estimulam os folículos capilares dormentes, proporcionando uma barba mais cheia e encorpada.',
     usage: 'Para resultados otimizados:\n- Limpar bem a área antes da aplicação\n- Aplicar 1ml na área da barba pela manhã e à noite\n- Massagear suavemente até completa absorção\n- Manter uso contínuo por pelo menos 3 meses\n- Evitar aplicar próximo aos olhos e boca\n- Lavar as mãos após a aplicação',
     benefits: [
-      'Crescimento acelerado da barba em áreas falhas',
-      'Fortalecimento e espessamento dos fios existentes',
-      'Ativação de folículos capilares dormentes',
-      'Barba visivelmente mais cheia e encorpada',
-      'Redução da queda dos fios',
-      'Resultados visíveis a partir de 15 dias de uso'
+      'Estimula o crescimento de novos fios na barba',
+      'Preenche falhas e áreas sem pelos',
+      'Aumenta a espessura e densidade dos fios existentes',
+      'Fortalece os folículos capilares',
+      'Acelera o crescimento da barba em até 5 vezes',
+      'Previne a queda precoce dos pelos faciais',
+      'Resultados visíveis a partir de 4 semanas de uso',
+      'Proporciona barba com aspecto mais volumoso e saudável'
     ],
     variants: [
       { quantity: 1, price: 97.00, link: 'https://entrega.logzz.com.br/pay/memokq47l/oferta-de-remaketing' },
@@ -192,12 +202,14 @@ export const products: Product[] = [
     details: 'Cresce +Hair é um suplemento inovador que combina biotina de alta absorção, colágeno hidrolisado, vitaminas do complexo B e minerais essenciais para o crescimento capilar. Sua fórmula exclusiva foi desenvolvida por tricologistas e dermatologistas para atuar desde a raiz, fortalecendo os folículos e estimulando o crescimento saudável dos fios.',
     usage: 'Para máxima eficácia:\n- Tomar 2 cápsulas por dia após as refeições principais\n- Manter uso contínuo por pelo menos 90 dias\n- Beber bastante água ao longo do dia\n- Pode ser associado a outros suplementos vitamínicos\n- Armazenar em local fresco e seco\n- Não exceder a dosagem recomendada',
     benefits: [
-      'Crescimento acelerado dos cabelos em até 3x',
-      'Fortalecimento dos fios desde a raiz',
-      'Redução significativa da queda capilar',
-      'Aumento da densidade e volume dos cabelos',
-      'Melhora na textura e brilho dos fios',
-      'Nutrição profunda do couro cabeludo'
+      'Interrompe a queda capilar desde as primeiras aplicações',
+      'Estimula o crescimento de novos fios em áreas calvas ou ralas',
+      'Revitaliza os folículos capilares inativos',
+      'Fortalece a estrutura dos fios, reduzindo a quebra',
+      'Proporciona brilho e maciez impressionantes',
+      'Aumenta o volume e densidade capilar',
+      'Protege contra danos externos (poluição, raios UV)',
+      'Equilibra a oleosidade do couro cabeludo'
     ],
     variants: [
       { quantity: 1, price: 97.00, link: 'https://entrega.logzz.com.br/pay/mem2pqem3/1-pote-9700---remarketing' },
@@ -225,12 +237,14 @@ export const products: Product[] = [
     details: 'O Esfregão Mágico revoluciona a forma de limpar sua casa com sua tecnologia de microfibra de última geração. Suas fibras ultrafinas, 100 vezes mais finas que um fio de cabelo, penetram nas microrranhuras das superfícies, removendo sujeira, gordura e bactérias com eficiência superior. O sistema giratório 360° permite alcançar todos os cantos com facilidade.',
     usage: 'Para limpeza eficiente:\n- Umedecer levemente o refil com água\n- Torcer para remover o excesso\n- Deslizar suavemente sobre a superfície\n- Lavar o refil após cada uso\n- Secar completamente antes de guardar\n- Substituir o refil a cada 3 meses ou quando necessário',
     benefits: [
-      'Limpeza profunda sem produtos químicos',
-      'Remove até 99,9% das bactérias usando apenas água',
-      'Sistema giratório 360° para maior praticidade',
-      'Economia significativa em produtos de limpeza',
-      'Ideal para todos os tipos de piso e superfícies',
-      'Durável e ecologicamente correto'
+      'Reduz o esforço físico durante a limpeza em até 80%',
+      'Alcança áreas difíceis como cantos e debaixo de móveis',
+      'Elimina a necessidade de se ajoelhar para esfregar o chão',
+      'Sistema de centrifugação que deixa o pano na umidade ideal',
+      'Refis laváveis e duráveis que economizam dinheiro a longo prazo',
+      'Remove sujeiras profundas sem riscar o piso',
+      'Compatível com todos os tipos de pisos (porcelanato, madeira, vinílico)',
+      'Ecológico: reduz o uso de produtos químicos e descartáveis'
     ],
     variants: [
       { quantity: 1, price: 99.99, link: 'https://entrega.logzz.com.br/pay/memk7rdxm/qsnhw-1-unidade-esfregao-magico-360' },
@@ -254,12 +268,14 @@ export const products: Product[] = [
     details: 'O Protetor Premium para Colchão utiliza tecnologia avançada de impermeabilização com membrana respirável que permite a passagem de ar enquanto bloqueia completamente líquidos e fluidos. Sua estrutura multicamadas oferece proteção total contra ácaros, bactérias e fungos, ideal para pessoas com alergias ou asma.',
     usage: 'Para proteção efetiva:\n- Lavar antes do primeiro uso\n- Instalar sobre o colchão antes dos lençóis\n- Ajustar bem nas extremidades\n- Lavar a cada 15-30 dias\n- Secar completamente antes de usar\n- Evitar uso de alvejantes',
     benefits: [
-      '100% impermeável a líquidos e fluidos',
-      'Tecnologia respirável que não esquenta',
-      'Proteção completa contra ácaros e bactérias',
-      'Ideal para pessoas com alergias ou asma',
-      'Prolonga a vida útil do colchão',
-      'Lavável em máquina e fácil de manter'
+      'Protege contra líquidos, suor e manchas',
+      'Barreira eficaz contra ácaros e bactérias',
+      'Prolonga a vida útil do colchão em até 5 anos',
+      'Previne alergias respiratórias e dermatites',
+      'Mantém a higiene do ambiente de sono',
+      'Fácil de colocar e remover para lavagem',
+      'Material respirável que não aquece durante o sono',
+      'Impermeável mas silencioso (não faz barulho ao se movimentar)'
     ],
     variants: [
       { quantity: 1, price: 99.99, link: 'https://entrega.logzz.com.br/pay/memredexr/fhldl-remarketing' },
@@ -283,12 +299,14 @@ export const products: Product[] = [
     details: 'O Mini Mop 3 em 1 é uma solução completa de limpeza que combina vassoura, rodo e mop em um único produto compacto. Seu design inovador permite limpar diferentes superfícies com eficiência superior, enquanto economiza espaço de armazenamento. Ideal para apartamentos, escritórios e espaços compactos.',
     usage: 'Instruções de uso:\n- Escolher o acessório adequado para cada superfície\n- Encaixar firmemente o refil desejado\n- Umedecer quando necessário\n- Limpar com movimentos suaves\n- Lavar os refis após o uso\n- Guardar em local seco e ventilado',
     benefits: [
-      'Três funções essenciais em um único produto',
-      'Design compacto que economiza espaço',
-      'Ideal para diferentes tipos de superfície',
-      'Fácil de usar e manter',
-      'Refis laváveis e duráveis',
-      'Perfeito para espaços pequenos'
+      'Economiza espaço por combinar 3 funções em 1 produto',
+      'Reduz o tempo de limpeza pela metade',
+      'Dispensa o uso de balde com água',
+      'Sistema de spray que economiza produto de limpeza',
+      'Cabeça articulada que alcança áreas difíceis',
+      'Leve e ergonômico, evita dores nas costas',
+      'Altura ajustável para diferentes usuários',
+      'Ideal para limpezas rápidas e emergenciais'
     ],
     variants: [
       { quantity: 1, price: 69.90, link: 'https://entrega.logzz.com.br/pay/mem388z4d/cjkmn-preco-promocional' },
@@ -298,31 +316,35 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 'hidroeco',
-    name: 'Hidroeco',
-    price: 127.90,
-    originalPrice: 199.90,
-    description: 'O Hidroeco é o revolucionário sistema que transforma a maneira como você economiza água em casa. Este dispositivo inteligente se adapta facilmente às suas torneiras e chuveiros, reduzindo o consumo de água em até 50% sem comprometer a pressão ou o conforto. Com tecnologia de aeração avançada, o fluxo permanece potente enquanto utiliza menos água. Fácil de instalar, sem necessidade de ferramentas especializadas, o Hidroeco começa a gerar economia imediatamente. Além de reduzir sua conta de água, contribui significativamente para a preservação dos recursos hídricos do planeta.',
+    id: 'progressiva-vegetal',
+    name: 'Progressiva Vegetal',
+    price: 150.00,
+    originalPrice: 300.00,
+    description: `A Progressiva Vegetal é um tratamento revolucionário 100% natural para quem busca cabelos lisos, saudáveis e brilhantes. Desenvolvida com tecnologia avançada e ingredientes botânicos, proporciona um alisamento suave e duradouro sem agredir os fios. Sua fórmula exclusiva combina extratos vegetais que atuam na fibra capilar, reduzindo o volume e eliminando o frizz, enquanto hidrata e fortalece os cabelos. Livre de formol e outros químicos agressivos, é a escolha perfeita para quem deseja alisar os cabelos de forma segura e natural. Transforme seus cabelos com a Progressiva Vegetal e conquiste o liso dos seus sonhos com saúde e beleza.`,
     images: [
-      'https://i.pinimg.com/736x/6e/06/ee/6e06ee46140efd3dc6a6f353eac89be6.jpg'
+      'https://i.pinimg.com/736x/72/75/1d/72751dab0a5ded0a44acaf9b38d7e552.jpg?width=400&height=400&fit=cover'
     ],
     category: 'dia-a-dia',
     rating: 4.8,
-    numReviews: 87,
-    stockCount: 45,
-    details: 'Hidroeco utiliza tecnologia alemã de última geração para otimizar o consumo de água. Seu sistema patenteado de microbolhas incorpora ar ao fluxo de água, mantendo a mesma sensação de pressão enquanto reduz significativamente o consumo. Compatível com a maioria das torneiras e chuveiros do mercado.',
-    usage: 'Instalação e uso:\n- Verificar compatibilidade com sua torneira/chuveiro\n- Seguir manual de instalação incluso\n- Limpar o filtro mensalmente\n- Substituir o núcleo a cada 12 meses\n- Manter pressão mínima de 3mca\n- Evitar impactos e quedas',
+    numReviews: 156,
+    stockCount: 100,
+    details: 'A Progressiva Vegetal utiliza uma tecnologia inovadora que combina ativos naturais como queratina vegetal, óleo de argan, extrato de babosa e proteínas vegetais. Sua fórmula exclusiva proporciona alisamento e redução de volume sem danificar os fios, mantendo-os saudáveis e com brilho natural.',
+    usage: 'Para resultados profissionais:\n- Lavar os cabelos com shampoo antirresíduos\n- Secar 100% os fios\n- Aplicar o produto mecha a mecha\n- Deixar agir por 40 minutos\n- Enxaguar e finalizar com prancha\n- Aguardar 72h para lavar',
     benefits: [
-      'Economia de até 70% no consumo de água',
-      'Mantém a pressão e conforto do jato',
-      'Instalação rápida e sem ferramentas',
-      'Retorno do investimento em até 2 meses',
-      'Contribui para a sustentabilidade',
-      'Certificado pelo INMETRO'
+      'Alisa os cabelos sem agredir os fios',
+      'Reduz o volume e elimina o frizz por até 3 meses',
+      'Hidrata profundamente devolvendo brilho e maciez',
+      'Não contém formol ou outros químicos nocivos',
+      'Protege contra danos térmicos durante o uso de secador e chapinha',
+      'Facilita a escovação e modelagem dos cabelos no dia a dia',
+      'Selagem das cutículas que protege contra agentes externos',
+      'Tratamento completo que pode ser feito em casa com segurança'
     ],
     variants: [
-      { quantity: 1, price: 127.90, link: 'https://entrega.logzz.com.br/pay/memx6k0p0/1-hidroeco---confira-o-valor' },
-      { quantity: 2, price: 199.90, link: 'https://entrega.logzz.com.br/pay/memx6k0p0/bftuy-2-hidroeco---confira-o-valor' }
+      { quantity: 1, price: 150.00, link: 'https://entrega.logzz.com.br/pay/mem38237p/progcreme150' },
+      { quantity: 2, price: 197.00, link: 'https://entrega.logzz.com.br/pay/mem38237p/prog-2197' },
+      { quantity: 3, price: 291.00, link: 'https://entrega.logzz.com.br/pay/mem38237p/progcreme3x97' },
+      { quantity: 4, price: 388.00, link: 'https://entrega.logzz.com.br/pay/mem38237p/progcreme4x97' }
     ]
   },
   {
@@ -341,12 +363,14 @@ export const products: Product[] = [
     details: 'O Kit Garrafa 3 em 1 é fabricado em aço inox 304 de grau alimentício com tecnologia de isolamento a vácuo de dupla parede. Seu design versátil inclui três tampas intercambiáveis para diferentes usos: boca larga para bebidas com gelo, boca estreita para líquidos quentes e tampa esportiva para atividades físicas.',
     usage: 'Instruções de uso:\n- Lavar antes do primeiro uso\n- Escolher a tampa adequada para cada bebida\n- Pré-aquecer/resfriar para melhor desempenho\n- Lavar regularmente com escova específica\n- Não usar máquina de lavar\n- Evitar impactos e quedas',
     benefits: [
-      'Mantém bebidas quentes por até 12 horas',
-      'Conserva bebidas geladas por até 24 horas',
-      'Sistema 3 em 1 com tampas intercambiáveis',
-      'Material durável e livre de BPA',
-      'Design moderno e ergonômico',
-      'Ideal para todas as ocasiões'
+      'Mantém bebidas na temperatura ideal por até 24 horas',
+      'Evita a necessidade de carregar múltiplos itens',
+      'Organiza medicamentos diários de forma discreta',
+      'Compartimento secreto para objetos pequenos de valor',
+      'Material resistente a quedas e impactos',
+      'Design elegante e moderno para uso em qualquer ambiente',
+      'Vedação 100% à prova de vazamentos',
+      'Economiza espaço na bolsa ou mochila'
     ],
     variants: [
       { quantity: 1, price: 79.99, link: 'https://entrega.logzz.com.br/pay/mempynlpw/rjizg-1-garrafa-termica' },
@@ -370,12 +394,14 @@ export const products: Product[] = [
     details: 'O Depilador Feminino 5 em 1 utiliza tecnologia IPL (Luz Pulsada Intensa) combinada com cabeçotes específicos para cada área do corpo. Seu sistema inteligente ajusta automaticamente a intensidade de acordo com o tom de pele, garantindo uma depilação segura e eficaz. Inclui cabeçotes para rosto, axilas, virilha, pernas e braços.',
     usage: 'Para resultados ideais:\n- Limpar e secar a área antes do uso\n- Selecionar o cabeçote adequado\n- Ajustar a intensidade conforme necessário\n- Deslizar suavemente sobre a pele\n- Usar 1-2 vezes por semana\n- Limpar o aparelho após cada uso',
     benefits: [
-      'Depilação eficiente e duradoura',
-      '5 cabeçotes especializados inclusos',
-      'Tecnologia IPL de última geração',
-      'Uso sem fio com bateria de longa duração',
-      'Sensor de tom de pele para maior segurança',
-      'Resultados visíveis em 4 semanas'
+      'Versatilidade para depilar diferentes áreas do corpo',
+      'Elimina pelos pela raiz, garantindo até 4 semanas sem crescimento',
+      'Adaptável para áreas sensíveis com cabeça especial',
+      'Luz LED que ilumina pelos finos e difíceis de visualizar',
+      'Função de esfoliação que previne pelos encravados',
+      'Massageador que estimula a circulação e reduz a vermelhidão',
+      'Uso no banho que torna a depilação menos dolorosa',
+      'Bateria de longa duração ideal para viagens'
     ],
     variants: [
       { quantity: 1, price: 89.99, link: 'https://entrega.logzz.com.br/pay/memzlq00v/1-unidade---depilador' },
@@ -404,12 +430,14 @@ export const products: Product[] = [
     details: 'O Melzinho Árabe (Exotic Honey) é um estimulante natural que combina ingredientes raros e preciosos da medicina tradicional árabe. Sua fórmula exclusiva inclui mel puro, geleia real, própolis e extratos herbais cuidadosamente selecionados para proporcionar uma experiência única e resultados extraordinários.',
     usage: 'Para resultados otimizados:\n- Consumir uma porção 30 minutos antes da relação\n- Deixar dissolver completamente na boca\n- Não exceder 2 porções em 24 horas\n- Manter em local fresco e seco\n- Agitar antes de usar\n- Consultar médico em caso de uso contínuo',
     benefits: [
-      'Aumento significativo da libido e desejo',
-      'Intensificação das sensações e do prazer',
-      'Melhora da circulação sanguínea',
-      'Aumento da energia e disposição',
-      'Efeito duradouro por até 4 horas',
-      'Fórmula 100% natural sem contraindicações'
+      'Intensifica as sensações femininas durante a relação',
+      'Aumenta a lubrificação natural',
+      'Proporciona sensação de aquecimento e formigamento prazeroso',
+      'Eleva a sensibilidade nas zonas erógenas',
+      'Facilita e intensifica o orgasmo feminino',
+      'Ingredientes naturais que não causam irritação',
+      'Sabor adocicado que torna o sexo oral mais prazeroso',
+      'Efeito prolongado que dura toda a relação sexual'
     ],
     variants: [
       { quantity: 2, price: 87.00, link: 'https://entrega.logzz.com.br/pay/mem8d5ngk/rmkt-2-unidades---r87' },
@@ -435,12 +463,14 @@ export const products: Product[] = [
     details: 'Rivosex é um suplemento revolucionário desenvolvido por especialistas em urologia e nutrição esportiva. Sua fórmula exclusiva combina L-Arginina de alta biodisponibilidade, Tribulus Terrestris padronizado, Maca Peruana e outros ativos naturais que atuam sinergicamente para potencializar o desempenho masculino.',
     usage: 'Para máxima eficácia:\n- Tomar 1 cápsula 1 hora antes da relação\n- Ingerir com água em temperatura ambiente\n- Não exceder 1 cápsula por dia\n- Manter uso contínuo para melhores resultados\n- Evitar bebidas alcoólicas\n- Consultar médico antes de usar',
     benefits: [
-      'Aumento significativo da resistência física',
-      'Melhora expressiva da circulação sanguínea',
       'Ereções mais firmes e duradouras',
-      'Aumento da libido e do desejo',
-      'Maior disposição e energia',
-      'Resultados desde a primeira dose'
+      'Aumento da libido e do desejo sexual',
+      'Melhora significativa da resistência física durante o ato',
+      'Redução do período refratário entre relações',
+      'Controle da ejaculação precoce',
+      'Aumento do fluxo sanguíneo para a região genital',
+      'Melhora da qualidade do esperma e fertilidade',
+      'Resultados imediatos desde a primeira dose'
     ],
     variants: [
       { quantity: 1, price: 59.90, link: 'https://entrega.logzz.com.br/pay/mem3m3206/1-rivosex-promo' },
@@ -466,12 +496,14 @@ export const products: Product[] = [
     details: 'O Gel Volumetrão utiliza tecnologia VolumeMax de última geração que combina ativos naturais concentrados para resultados extraordinários. Sua fórmula exclusiva inclui extratos de Tribulus Terrestris, Ginkgo Biloba e outros componentes naturais que atuam sinergicamente para proporcionar resultados visíveis desde a primeira aplicação.',
     usage: 'Para resultados ideais:\n- Limpar bem a área antes da aplicação\n- Aplicar quantidade suficiente com massagem suave\n- Aguardar completa absorção\n- Usar 30 minutos antes da relação\n- Lavar as mãos após aplicação\n- Evitar contato com mucosas sensíveis',
     benefits: [
-      'Aumento significativo do volume',
-      'Resultados visíveis desde a primeira aplicação',
-      'Efeito prolongado por até 4 horas',
-      'Fórmula não oleosa de rápida absorção',
-      'Sem efeitos colaterais',
-      'Compatível com preservativos'
+      'Aumento temporário do volume peniano em até 20%',
+      'Ereções mais rígidas e duradouras',
+      'Sensibilidade aumentada que intensifica o prazer',
+      'Efeito vasodilatador que melhora a circulação local',
+      'Não transfere para a parceira durante o ato',
+      'Fórmula hipoalergênica que não causa irritação',
+      'Compatível com preservativos',
+      'Efeito visual e sensorial que aumenta a autoconfiança'
     ],
     variants: [
       { quantity: 1, price: 87.00, link: 'https://entrega.logzz.com.br/pay/memx037m0/jcjti-1-por-87' },
@@ -497,12 +529,14 @@ export const products: Product[] = [
     details: 'Firepower é um suplemento energético avançado desenvolvido por especialistas em nutrição esportiva. Sua fórmula exclusiva combina cafeína anidra de alta pureza, taurina, vitaminas do complexo B e outros compostos bioativos que proporcionam energia sustentada e foco mental por até 8 horas.',
     usage: 'Para máxima eficácia:\n- Tomar 1 cápsula pela manhã em jejum\n- Aguardar 30 minutos para se alimentar\n- Não tomar após as 16h\n- Manter intervalo mínimo de 8h entre doses\n- Beber muita água durante o dia\n- Não exceder 2 cápsulas em 24h',
     benefits: [
-      'Energia sustentada por até 8 horas',
-      'Aumento significativo do foco mental',
-      'Melhora do desempenho físico',
-      'Zero crash ou efeito rebote',
-      'Metabolismo acelerado',
-      'Supressão natural do apetite'
+      'Aumenta drasticamente a energia e resistência sexual',
+      'Intensifica as sensações de prazer para ambos os parceiros',
+      'Proporciona múltiplos orgasmos mais intensos',
+      'Reduz a fadiga durante relações prolongadas',
+      'Efeito prolongado que permanece por até 72 horas',
+      'Melhora o fluxo sanguíneo e a sensibilidade das zonas erógenas',
+      'Aumenta o desejo e a disposição para o sexo',
+      'Fórmula natural que não causa dependência ou efeitos colaterais'
     ],
     variants: [
       { quantity: 1, price: 117.00, link: 'https://entrega.logzz.com.br/pay/mem6245or/1-pote-117' },
@@ -528,12 +562,14 @@ export const products: Product[] = [
     details: 'Big Tora em gotas é um estimulante natural concentrado que combina extratos de Catuaba, Marapuama, Ginseng e outros ativos naturais conhecidos por seus efeitos potencializadores. Sua fórmula líquida proporciona absorção superior e início de ação mais rápido comparado a cápsulas convencionais.',
     usage: 'Para resultados otimizados:\n- Diluir 20 gotas em água ou suco\n- Tomar 30 minutos antes da relação\n- Não exceder 30 gotas por dia\n- Agitar bem antes de usar\n- Manter em local fresco\n- Consultar médico em caso de uso contínuo',
     benefits: [
-      'Ação rápida em até 30 minutos',
-      'Absorção superior à de cápsulas',
-      'Efeito prolongado por até 4 horas',
-      'Fácil de usar e transportar',
-      'Fórmula concentrada mais eficiente',
-      '100% natural sem contraindicações'
+      'Aumento gradual e permanente do volume peniano',
+      'Melhora da qualidade das ereções a longo prazo',
+      'Estímulo à produção natural de testosterona',
+      'Aumento da resistência e do desempenho sexual',
+      'Melhora da circulação sanguínea nos órgãos genitais',
+      'Elevação dos níveis de autoconfiança e autoestima',
+      'Resultados progressivos que se mantêm mesmo após o fim do tratamento',
+      'Aumento da libido e do desejo sexual'
     ],
     variants: [
       { quantity: 1, price: 69.90, link: 'https://entrega.logzz.com.br/pay/memlonkdk/jywdl-1-unidade-gotas' },
@@ -558,12 +594,14 @@ export const products: Product[] = [
     details: 'Pikasso Gel utiliza tecnologia SensMax de última geração que combina L-Arginina de alta biodisponibilidade com extratos naturais selecionados. Sua fórmula exclusiva proporciona vasodilatação localizada e aumento da sensibilidade, resultando em experiências mais intensas e prazerosas.',
     usage: 'Para resultados ideais:\n- Limpar bem a área antes da aplicação\n- Aplicar quantidade suficiente com massagem suave\n- Aguardar completa absorção\n- Usar 30 minutos antes da relação\n- Lavar as mãos após aplicação\n- Evitar contato com mucosas sensíveis',
     benefits: [
-      'Aumento significativo do volume',
-      'Resultados visíveis desde a primeira aplicação',
-      'Efeito prolongado por até 4 horas',
-      'Fórmula não oleosa de rápida absorção',
-      'Sem efeitos colaterais',
-      'Compatível com preservativos'
+      'Prolonga o tempo da relação sexual em até 3 vezes',
+      'Controle efetivo sobre a ejaculação precoce',
+      'Proporciona maior prazer para ambos os parceiros',
+      'Efeito localizado que não diminui a sensação de prazer',
+      'Não afeta a parceira por ser de rápida absorção',
+      'Discreto e de fácil aplicação momentos antes da relação',
+      'Aumenta a confiança masculina durante o ato sexual',
+      'Compatível com o uso de preservativos'
     ],
     variants: [
       { quantity: 1, price: 97.00, link: 'https://entrega.logzz.com.br/pay/mem8drem0/eucks-1-gel' },
