@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Header from './components/layout/Header';
@@ -23,35 +24,37 @@ import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <SearchProvider>
-          <ScrollToTop />
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/cadastro" element={<SignUpPage />} />
-                <Route path="/recuperar-senha" element={<ResetPasswordPage />} />
-                <Route path="/" element={<HomePage />} />
-                <Route path="/produto/:id" element={<ProductPage />} />
-                <Route path="/categoria/:id" element={<CategoryPage />} />
-                <Route path="/promocoes" element={<PromotionsPage />} />
-                <Route path="/mais-vendidos" element={<BestSellersPage />} />
-                <Route path="/politicas/privacidade" element={<PrivacyPolicyPage />} />
-                <Route path="/politicas/troca" element={<ExchangePolicyPage />} />
-                <Route path="/politicas/envio" element={<ShippingPolicyPage />} />
-                <Route path="/perguntas-frequentes" element={<FAQPage />} />
-              </Routes>
-            </main>
-            <Footer />
-            <WhatsAppButton />
-            <SearchResults />
-          </div>
-        </SearchProvider>
-      </Router>
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <Router>
+          <SearchProvider>
+            <ScrollToTop />
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <main className="flex-grow pt-4">
+                <Routes>
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/cadastro" element={<SignUpPage />} />
+                  <Route path="/recuperar-senha" element={<ResetPasswordPage />} />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/produto/:id" element={<ProductPage />} />
+                  <Route path="/categoria/:id" element={<CategoryPage />} />
+                  <Route path="/promocoes" element={<PromotionsPage />} />
+                  <Route path="/mais-vendidos" element={<BestSellersPage />} />
+                  <Route path="/politicas/privacidade" element={<PrivacyPolicyPage />} />
+                  <Route path="/politicas/troca" element={<ExchangePolicyPage />} />
+                  <Route path="/politicas/envio" element={<ShippingPolicyPage />} />
+                  <Route path="/perguntas-frequentes" element={<FAQPage />} />
+                </Routes>
+              </main>
+              <Footer />
+              <WhatsAppButton />
+              <SearchResults />
+            </div>
+          </SearchProvider>
+        </Router>
+      </AuthProvider>
+    </HelmetProvider>
   );
 }
 

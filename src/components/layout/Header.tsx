@@ -53,7 +53,7 @@ const Header: React.FC = () => {
   };
   
   return (
-    <header className="w-full">
+    <>
       {/* Top Bar */}
       <div className="bg-brand-red text-white py-2 hidden md:block">
         <div className="container mx-auto px-4">
@@ -88,18 +88,16 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main Header */}
-      <div className={`fixed top-0 md:top-[44px] left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg py-2' : 'bg-gradient-brand py-3'
-      }`}>
+      <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Mobile menu button */}
             <button 
-              className="md:hidden p-2 hover:bg-white/10 rounded-full transition-colors"
+              className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
               onClick={toggleMenu}
               aria-label="Menu"
             >
-              {isMenuOpen ? <X size={24} className="text-primary" /> : <Menu size={24} className="text-primary" />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
             
             {/* Logo */}
@@ -131,7 +129,7 @@ const Header: React.FC = () => {
                   type="search"
                   name="search"
                   placeholder="Buscar produtos..." 
-                  className="w-64 rounded-full bg-white/90 backdrop-blur-sm pl-5 pr-12 py-2.5 text-sm border border-white/20 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent shadow-sm"
+                  className="w-64 rounded-full bg-gray-100 pl-5 pr-12 py-2.5 text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent"
                 />
                 <button 
                   type="submit" 
@@ -146,7 +144,7 @@ const Header: React.FC = () => {
                 <div className="relative">
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                    className="flex items-center space-x-3 text-sm font-medium text-primary hover:text-brand-red transition-colors p-2 hover:bg-white/10 rounded-full"
+                    className="flex items-center space-x-3 text-sm font-medium text-primary hover:text-brand-red transition-colors p-2 hover:bg-gray-100 rounded-full"
                   >
                     <User size={24} />
                     <span className="hidden md:block">{user.email?.split('@')[0]}</span>
@@ -185,13 +183,13 @@ const Header: React.FC = () => {
           </div>
           
           {/* Mobile Search */}
-          <div className="md:hidden mt-3">
+          <div className="md:hidden pb-4">
             <form onSubmit={handleSearch} className="relative">
               <input 
                 type="search"
                 name="search"
                 placeholder="Buscar produtos..." 
-                className="w-full rounded-full bg-white/90 backdrop-blur-sm pl-5 pr-12 py-2.5 text-sm border border-white/20 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent shadow-sm"
+                className="w-full rounded-full bg-gray-100 pl-5 pr-12 py-2.5 text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent"
               />
               <button 
                 type="submit" 
@@ -202,7 +200,7 @@ const Header: React.FC = () => {
             </form>
           </div>
         </div>
-      </div>
+      </header>
       
       {/* Mobile Menu */}
       <div 
@@ -263,10 +261,7 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </div>
-      
-      {/* Spacer for fixed header */}
-      <div className="h-24 md:h-[108px]"></div>
-    </header>
+    </>
   );
 };
 

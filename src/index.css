@@ -9,15 +9,28 @@
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
+    scroll-behavior: smooth;
   }
   
   body {
-    @apply text-base antialiased;
+    @apply text-base antialiased bg-gray-50;
     -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  /* Improved tap targets for mobile */
+  button, a, input, select, textarea {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Better form elements for mobile */
+  input, select, textarea {
+    @apply text-base;
+    font-size: 16px !important;
   }
 }
 
@@ -30,6 +43,7 @@
   .touch-scroll {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
   }
   
   .no-tap-highlight {
@@ -42,6 +56,10 @@
 
   .min-w-touch-target {
     min-width: 44px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -124,5 +142,22 @@ img {
 @media (hover: none) {
   .hover\:scale-105:hover {
     transform: none;
+  }
+}
+
+/* Better scrolling on iOS */
+@supports (-webkit-touch-callout: none) {
+  .scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
