@@ -4,7 +4,7 @@ import { getProductById } from '../data/products';
 import ProductGallery from '../components/product/ProductGallery';
 import ProductTabs from '../components/product/ProductTabs';
 import RelatedProducts from '../components/product/RelatedProducts';
-import { Star, Sparkles } from 'lucide-react';
+import { Star, Sparkles, CreditCard, Package, Shield, Clock } from 'lucide-react';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,6 +22,7 @@ const ProductPage: React.FC = () => {
   }
   
   const currentVariant = product.variants[selectedVariant];
+  const installmentPrice = (currentVariant.price / 10).toFixed(2);
 
   const handleVariantSelect = (index: number) => {
     setSelectedVariant(index);
@@ -58,19 +59,50 @@ const ProductPage: React.FC = () => {
           </div>
           
           <div className="mb-6">
-            <span className="text-2xl font-bold text-brand-red">
-              R$ {currentVariant.price.toFixed(2)}
-            </span>
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl font-bold text-brand-red">
+                R$ {currentVariant.price.toFixed(2)}
+              </span>
+              <span className="text-sm text-gray-600">à vista</span>
+            </div>
+            
+            <div className="flex items-center text-sm text-gray-600 mt-2">
+              <CreditCard className="w-4 h-4 text-brand-red mr-2" />
+              <span>10x de R$ {installmentPrice} sem juros</span>
+            </div>
+            
             {product.originalPrice && (
-              <div className="mt-1 flex items-center gap-2">
-                <span className="text-sm text-secondary line-through">
-                  R$ {(product.originalPrice * currentVariant.quantity).toFixed(2)}
+              <div className="mt-2 flex items-center gap-2">
+                <span className="text-sm text-gray-500 line-through">
+                  De R$ {(product.originalPrice * currentVariant.quantity).toFixed(2)}
                 </span>
-                <span className="text-sm text-brand-red font-medium">
+                <span className="text-sm text-green-600 font-medium bg-green-50 px-2 py-0.5 rounded-full">
                   Economia de R$ {calculateSavings(currentVariant).toFixed(2)}
                 </span>
               </div>
             )}
+          </div>
+          
+          {/* Benefits */}
+          <div className="bg-gray-50 rounded-lg p-4 mb-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center text-sm text-gray-600">
+                <Package className="w-5 h-5 text-brand-red mr-2" />
+                <span>Frete Grátis</span>
+              </div>
+              <div className="flex items-center text-sm text-gray-600">
+                <Clock className="w-5 h-5 text-brand-red mr-2" />
+                <span>Entrega 1-3 dias</span>
+              </div>
+              <div className="flex items-center text-sm text-gray-600">
+                <Shield className="w-5 h-5 text-brand-red mr-2" />
+                <span>Garantia 30 dias</span>
+              </div>
+              <div className="flex items-center text-sm text-gray-600">
+                <CreditCard className="w-5 h-5 text-brand-red mr-2" />
+                <span>Pagamento Seguro</span>
+              </div>
+            </div>
           </div>
           
           <p className="text-secondary mb-6">{product.description}</p>
@@ -102,6 +134,9 @@ const ProductPage: React.FC = () => {
                   </div>
                   <div className="text-lg font-bold text-brand-red mt-1">
                     R$ {variant.price.toFixed(2)}
+                  </div>
+                  <div className="text-xs text-gray-600">
+                    10x de R$ {(variant.price / 10).toFixed(2)}
                   </div>
                   {product.originalPrice && (
                     <div className="text-xs text-brand-red mt-1">

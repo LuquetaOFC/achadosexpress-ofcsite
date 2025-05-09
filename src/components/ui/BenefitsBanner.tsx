@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, Truck, Trophy, CreditCard, ShieldCheck, Clock } from 'lucide-react';
+import { Check, Truck, Trophy, CreditCard, ShieldCheck, Clock, Star, Users } from 'lucide-react';
 
 interface BenefitsBannerProps {
   variant?: 'full' | 'compact';
@@ -32,29 +32,29 @@ const BenefitsBanner: React.FC<BenefitsBannerProps> = ({
       description: 'Economia em todas as compras'
     },
     {
-      icon: <CreditCard className="text-brand-red w-6 h-6" />,
-      text: 'MÚLTIPLAS FORMAS DE PAGAMENTO',
-      compactText: 'PAGAMENTO FLEXÍVEL',
-      description: 'Escolha como prefere pagar'
+      icon: <Star className="text-brand-red w-6 h-6" />,
+      text: '4.8/5 AVALIAÇÃO DOS CLIENTES',
+      compactText: '4.8/5 ESTRELAS',
+      description: 'Mais de 10.000 clientes satisfeitos'
     },
     {
-      icon: <Check className="text-brand-red w-6 h-6" />,
-      text: 'PRODUTOS 100% ORIGINAIS',
-      compactText: 'ORIGINALIDADE',
-      description: 'Qualidade garantida'
+      icon: <Users className="text-brand-red w-6 h-6" />,
+      text: 'MAIS DE 50.000 CLIENTES',
+      compactText: '50.000+ CLIENTES',
+      description: 'Confiança comprovada'
     },
     {
-      icon: <Clock className="text-brand-red w-6 h-6" />,
-      text: 'ATENDIMENTO 24/7',
-      compactText: 'SUPORTE 24H',
-      description: 'Sempre prontos para ajudar'
+      icon: <ShieldCheck className="text-brand-red w-6 h-6" />,
+      text: 'GARANTIA DE 30 DIAS',
+      compactText: 'GARANTIA 30 DIAS',
+      description: 'Satisfação garantida ou seu dinheiro de volta'
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % benefits.length);
-    }, 3000); // Change benefit every 3 seconds
+    }, 3000);
 
     return () => clearInterval(timer);
   }, []);
@@ -63,7 +63,6 @@ const BenefitsBanner: React.FC<BenefitsBannerProps> = ({
     <div className={`bg-gradient-brand py-6 ${className}`}>
       <div className="container mx-auto px-4">
         {variant === 'full' ? (
-          // Desktop version: grid layout with animation
           <div className="hidden md:grid grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div 
@@ -87,7 +86,6 @@ const BenefitsBanner: React.FC<BenefitsBannerProps> = ({
             ))}
           </div>
         ) : (
-          // Mobile carousel version with auto-rotation
           <div className="md:hidden">
             <div className="overflow-x-auto pb-4 scrollbar-hide">
               <div 
@@ -110,7 +108,6 @@ const BenefitsBanner: React.FC<BenefitsBannerProps> = ({
               </div>
             </div>
             
-            {/* Indicators */}
             <div className="flex justify-center space-x-1 mt-2">
               {benefits.map((_, index) => (
                 <div

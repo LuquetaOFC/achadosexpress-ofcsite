@@ -1,9 +1,11 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import { CreditCard } from 'lucide-react';
 
 const CartSummary: React.FC = () => {
   const { state } = useCart();
+  const installmentPrice = (state.total / 10).toFixed(2);
   
   return (
     <div className="bg-white p-4 rounded-lg shadow-md">
@@ -12,15 +14,31 @@ const CartSummary: React.FC = () => {
       <div className="space-y-3 py-4">
         <div className="flex justify-between">
           <span className="text-gray-600">Subtotal:</span>
-          <span className="font-medium">R$ {state.total.toFixed(2)}</span>
+          <div className="text-right">
+            <div className="font-medium">R$ {state.total.toFixed(2)}</div>
+            <div className="text-xs text-gray-600 flex items-center mt-1">
+              <CreditCard className="w-3 h-3 mr-1" />
+              10x de R$ {installmentPrice} sem juros
+            </div>
+          </div>
         </div>
         <div className="flex justify-between text-green-600">
           <span>Frete:</span>
           <span className="font-medium">GRÁTIS</span>
         </div>
-        <div className="pt-3 border-t border-gray-200 flex justify-between">
-          <span className="font-bold">Total:</span>
-          <span className="font-bold">R$ {state.total.toFixed(2)}</span>
+        <div className="pt-3 border-t border-gray-200">
+          <div className="flex justify-between items-baseline">
+            <span className="font-bold">Total:</span>
+            <div className="text-right">
+              <div className="font-bold text-lg text-brand-red">
+                R$ {state.total.toFixed(2)}
+                <span className="text-xs ml-1 text-gray-600">à vista</span>
+              </div>
+              <div className="text-xs text-gray-600">
+                ou 10x de R$ {installmentPrice} sem juros
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       

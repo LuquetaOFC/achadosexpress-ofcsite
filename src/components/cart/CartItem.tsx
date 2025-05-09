@@ -11,6 +11,7 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const { updateQuantity, removeItem } = useCart();
+  const installmentPrice = ((item.product.price * item.quantity) / 10).toFixed(2);
   
   const handleIncrease = () => {
     updateQuantity(item.product.id, item.quantity + 1);
@@ -62,14 +63,19 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             />
           </div>
           
-          <div className="flex items-center space-x-4">
-            <div className="font-medium">
+          <div className="flex flex-col items-end space-y-1">
+            <div className="font-medium text-brand-red">
               R$ {(item.product.price * item.quantity).toFixed(2)}
+              <span className="text-xs ml-1 text-gray-600">à vista</span>
+            </div>
+            
+            <div className="text-xs text-gray-600">
+              10x de R$ {installmentPrice} sem juros
             </div>
             
             <button 
               onClick={handleRemove}
-              className="text-gray-400 hover:text-red-500 transition-colors"
+              className="text-gray-400 hover:text-red-500 transition-colors mt-2"
               aria-label="Remover item"
             >
               <X size={18} />
