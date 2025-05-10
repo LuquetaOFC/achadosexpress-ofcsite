@@ -24,7 +24,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productName }) 
         <img 
           src={images[activeImage]} 
           alt={productName} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-white"
         />
         
         {/* Navigation Arrows */}
@@ -80,7 +80,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({ images, productName }) 
               <img 
                 src={image} 
                 alt={`${productName} - Imagem ${index + 1}`} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-white"
               />
             </button>
           ))}

@@ -4,7 +4,7 @@ import { getProductById } from '../data/products';
 import ProductGallery from '../components/product/ProductGallery';
 import ProductTabs from '../components/product/ProductTabs';
 import RelatedProducts from '../components/product/RelatedProducts';
-import { Star, Sparkles, CreditCard, Package, Shield, Clock } from 'lucide-react';
+import { Star, Sparkles, CreditCard, Package, Shield, Clock, MessageCircle } from 'lucide-react';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,6 +35,13 @@ const ProductPage: React.FC = () => {
     const originalTotal = product.originalPrice * variant.quantity;
     const savings = originalTotal - variant.price;
     return savings;
+  };
+
+  const handleContactSeller = () => {
+    const phoneNumber = '5511955573233';
+    const message = `Olá! Gostaria de saber mais sobre o produto: ${product.name} - ${currentVariant.quantity} unidade${currentVariant.quantity > 1 ? 's' : ''} por R$ ${currentVariant.price.toFixed(2)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
   
   return (
@@ -148,14 +155,24 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
           
-          <a
-            href={currentVariant.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-brand-red text-white py-3 rounded-md font-medium hover:bg-brand-orange transition-colors flex items-center justify-center text-lg"
-          >
-            Comprar Agora
-          </a>
+          <div className="flex gap-4">
+            <a
+              href={currentVariant.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-brand-red text-white py-3 rounded-md font-medium hover:bg-brand-orange transition-colors flex items-center justify-center text-lg"
+            >
+              Comprar Agora
+            </a>
+
+            <button
+              onClick={handleContactSeller}
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-md font-medium transition-colors"
+            >
+              <MessageCircle size={24} />
+              <span className="hidden md:inline">Falar com Vendedor</span>
+            </button>
+          </div>
         </div>
       </div>
       

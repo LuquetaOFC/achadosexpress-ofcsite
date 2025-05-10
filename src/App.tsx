@@ -18,11 +18,14 @@ import LoginPage from './pages/auth/LoginPage';
 import SignUpPage from './pages/auth/SignUpPage';
 import ResetPasswordPage from './pages/auth/ResetPasswordPage';
 import WhatsAppButton from './components/ui/WhatsAppButton';
+import ChatAssistant from './components/chat/ChatAssistant';
 import { SearchProvider } from './context/SearchContext';
 import SearchResults from './components/search/SearchResults';
 import ScrollToTop from './components/utils/ScrollToTop';
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = React.useState(false);
+
   return (
     <HelmetProvider>
       <AuthProvider>
@@ -48,7 +51,8 @@ function App() {
                 </Routes>
               </main>
               <Footer />
-              <WhatsAppButton />
+              {!isChatOpen && <WhatsAppButton onClick={() => setIsChatOpen(true)} />}
+              <ChatAssistant isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
               <SearchResults />
             </div>
           </SearchProvider>

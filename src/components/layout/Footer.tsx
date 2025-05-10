@@ -79,15 +79,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <Mail size={18} className="text-brand-red" />
-                <a href="mailto:contato@achadinhosexpress.com.br" className="ml-2 text-primary hover:text-brand-red transition-colors">
+                <span className="ml-2 text-primary">
                   contato@achadinhosexpress.com.br
-                </a>
+                </span>
               </li>
               <li className="flex items-center">
                 <MessageCircle size={18} className="text-brand-red" />
-                <a href="https://wa.me/5511955573233" className="ml-2 text-primary hover:text-brand-red transition-colors">
-                  (11) 95557-3233
-                </a>
+                <span className="ml-2 text-primary">
+                  Atendimento Online
+                </span>
               </li>
             </ul>
             

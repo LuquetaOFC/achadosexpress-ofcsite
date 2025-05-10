@@ -60,14 +60,14 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center divide-x divide-white/20">
               <div className="flex items-center space-x-6 pr-6">
-                <a href="tel:+5511955573233" className="flex items-center hover:text-white/90 transition-colors text-sm">
+                <span className="flex items-center hover:text-white/90 transition-colors text-sm">
                   <Phone size={16} className="mr-2" />
-                  (11) 95557-3233
-                </a>
-                <a href="mailto:contato@achadinhosexpress.com.br" className="flex items-center hover:text-white/90 transition-colors text-sm">
+                  Atendimento Online
+                </span>
+                <span className="flex items-center hover:text-white/90 transition-colors text-sm">
                   <Mail size={16} className="mr-2" />
                   contato@achadinhosexpress.com.br
-                </a>
+                </span>
               </div>
               <div className="flex items-center space-x-6 px-6">
                 <div className="flex items-center text-sm">
@@ -240,14 +240,14 @@ const Header: React.FC = () => {
             <div className="pt-6 border-t border-gray-200">
               <h3 className="text-sm font-medium text-gray-500 mb-4">Contato</h3>
               <div className="space-y-4">
-                <a href="tel:+5511955573233" className="flex items-center text-primary">
+                <div className="flex items-center text-primary">
                   <Phone size={18} className="mr-3 text-brand-red" />
-                  (11) 95557-3233
-                </a>
-                <a href="mailto:contato@achadinhosexpress.com.br" className="flex items-center text-primary">
+                  Atendimento Online
+                </div>
+                <div className="flex items-center text-primary">
                   <Mail size={18} className="mr-3 text-brand-red" />
                   contato@achadinhosexpress.com.br
-                </a>
+                </div>
                 <div className="flex items-center text-primary">
                   <Clock size={18} className="mr-3 text-brand-red" />
                   Seg - Sex, 9h às 18h
