@@ -133,8 +133,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
       <div className="p-4">
         {/* Dynamic Social Proof */}
         <div className="flex items-center text-xs text-gray-600 mb-2 animate-pulse">
-          <Users className="w-3 h-3 text-brand-red mr-1" />
-          <span>{recentViews} pessoas viram este produto recentemente</span>
+          <Users className="w-3 h-3 text-brand-red flex-shrink-0 mr-1" />
+          <span className="truncate">{recentViews} pessoas viram este produto</span>
         </div>
 
         {/* Product Title */}
@@ -166,8 +166,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
             </div>
             
             <div className="flex items-center text-xs text-gray-600 mt-1">
-              <CreditCard className="w-4 h-4 text-brand-red mr-1" />
-              <span>10x de R$ {installmentPrice} sem juros</span>
+              <CreditCard className="w-4 h-4 text-brand-red flex-shrink-0 mr-1" />
+              <span className="truncate">10x de R$ {installmentPrice} sem juros</span>
             </div>
           </div>
         </div>
@@ -184,23 +184,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
         <div className="mt-3 pt-3 border-t border-gray-100">
           <div className="space-y-2">
             <div className="flex items-center text-xs text-gray-600">
-              <CheckCircle size={14} className="text-green-500 mr-1.5" />
-              <span>Frete Grátis</span>
+              <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mr-1.5" />
+              <span className="truncate">Frete Grátis</span>
             </div>
             <div className="flex items-center text-xs text-gray-600">
-              <Timer size={14} className="text-brand-red mr-1.5" />
-              <span>Entrega Expressa 1-3 dias</span>
+              <Timer className="w-3.5 h-3.5 text-brand-red flex-shrink-0 mr-1.5" />
+              <span className="truncate">Entrega Expressa 1-3 dias</span>
             </div>
             <div className="flex items-center text-xs text-gray-600">
-              <Shield size={14} className="text-brand-red mr-1.5" />
-              <span>Garantia de 30 dias</span>
+              <Shield className="w-3.5 h-3.5 text-brand-red flex-shrink-0 mr-1.5" />
+              <span className="truncate">Garantia de 30 dias</span>
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
         <button className="w-full mt-4 bg-brand-red text-white py-2 rounded-lg font-medium hover:bg-brand-orange transition-colors transform hover:scale-105 flex items-center justify-center gap-2">
-          <Package size={18} />
+          <Package className="w-4.5 h-4.5 flex-shrink-0" />
           <span>Comprar Agora</span>
         </button>
       </div>
