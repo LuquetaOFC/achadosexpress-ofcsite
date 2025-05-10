@@ -4,7 +4,7 @@ import { getProductById } from '../data/products';
 import ProductGallery from '../components/product/ProductGallery';
 import ProductTabs from '../components/product/ProductTabs';
 import RelatedProducts from '../components/product/RelatedProducts';
-import { Star, Sparkles, CreditCard, Package, Shield, Clock, MessageCircle, Users, TrendingUp, Award, CheckCircle } from 'lucide-react';
+import { Star, Sparkles, CreditCard, Package, Shield, Clock, MessageCircle, Users, TrendingUp, Award, CheckCircle, DollarSign, Truck } from 'lucide-react';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,7 +16,6 @@ const ProductPage: React.FC = () => {
   
   const product = getProductById(id || '');
   
-  // 30-minute countdown timer effect
   useEffect(() => {
     const endTime = new Date();
     endTime.setMinutes(endTime.getMinutes() + 30);
@@ -26,7 +25,6 @@ const ProductPage: React.FC = () => {
       const diff = endTime.getTime() - now.getTime();
       
       if (diff <= 0) {
-        // Reset timer when it reaches 0
         endTime.setMinutes(endTime.getMinutes() + 30);
       }
       
@@ -42,7 +40,6 @@ const ProductPage: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Simulate dynamic social proof
   useEffect(() => {
     const baseViews = Math.floor(Math.random() * 50) + 100;
     const baseSales = Math.floor(Math.random() * 10) + 20;
@@ -89,27 +86,70 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-xl p-6 mb-8 shadow-lg border border-gray-100">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex items-center gap-4 group hover:scale-105 transition-transform">
+            <div className="bg-brand-red/10 p-3 rounded-lg">
+              <DollarSign className="w-8 h-8 text-brand-red" />
+            </div>
+            <div>
+              <div className="font-semibold text-gray-900">Pague na Entrega</div>
+              <div className="text-sm text-gray-600 group-hover:text-brand-red transition-colors">Mais segurança</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 group hover:scale-105 transition-transform">
+            <div className="bg-brand-red/10 p-3 rounded-lg">
+              <Truck className="w-8 h-8 text-brand-red" />
+            </div>
+            <div>
+              <div className="font-semibold text-gray-900">Frete Grátis</div>
+              <div className="text-sm text-gray-600 group-hover:text-brand-red transition-colors">Todo Brasil</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 group hover:scale-105 transition-transform">
+            <div className="bg-brand-red/10 p-3 rounded-lg">
+              <Clock className="w-8 h-8 text-brand-red" />
+            </div>
+            <div>
+              <div className="font-semibold text-gray-900">Entrega Expressa</div>
+              <div className="text-sm text-gray-600 group-hover:text-brand-red transition-colors">1-3 dias úteis</div>
+            </div>
+          </div>
+          
+          <div className="flex items-center gap-4 group hover:scale-105 transition-transform">
+            <div className="bg-brand-red/10 p-3 rounded-lg">
+              <Shield className="w-8 h-8 text-brand-red" />
+            </div>
+            <div>
+              <div className="font-semibold text-gray-900">Garantia Total</div>
+              <div className="text-sm text-gray-600 group-hover:text-brand-red transition-colors">Ou dinheiro de volta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Product Gallery */}
         <div>
           <ProductGallery images={product.images} productName={product.name} />
         </div>
         
-        {/* Product Info */}
         <div>
-          {/* Social Proof Banner */}
-          <div className="bg-gray-50 rounded-lg p-4 mb-6 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Users className="w-5 h-5 text-brand-red" />
-              <span className="text-sm text-gray-600">
-                {recentViews} pessoas estão vendo agora
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-green-500" />
-              <span className="text-sm text-gray-600">
-                {recentSales} vendas nas últimas 24h
-              </span>
+          <div className="bg-gray-50 rounded-lg p-4 mb-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-brand-red" />
+                <span className="text-sm text-gray-600">
+                  {recentViews} pessoas estão vendo agora
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-green-500" />
+                <span className="text-sm text-gray-600">
+                  {recentSales} vendas nas últimas 24h
+                </span>
+              </div>
             </div>
           </div>
 
@@ -129,7 +169,6 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Urgency Timer */}
           <div className="bg-red-50 p-4 rounded-lg mb-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -137,6 +176,18 @@ const ProductPage: React.FC = () => {
                 <span className="font-medium text-brand-red">Oferta por tempo limitado:</span>
               </div>
               <span className="font-bold text-brand-red">{timeLeft}</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg p-4 mb-6">
+            <h3 className="font-medium mb-3">Principais Benefícios:</h3>
+            <div className="space-y-2">
+              {product.benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))}
             </div>
           </div>
           
@@ -165,33 +216,28 @@ const ProductPage: React.FC = () => {
             )}
           </div>
           
-          {/* Benefits */}
           <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center text-sm text-gray-600">
-                <Package className="w-5 h-5 text-brand-red mr-2" />
-                <span>Frete Grátis</span>
+            <h3 className="font-medium mb-3">Formas de Pagamento na Entrega:</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <CreditCard className="w-4 h-4 text-brand-red" />
+                <span>Cartão de Crédito</span>
               </div>
-              <div className="flex items-center text-sm text-gray-600">
-                <Clock className="w-5 h-5 text-brand-red mr-2" />
-                <span>Entrega 1-3 dias</span>
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <CreditCard className="w-4 h-4 text-brand-red" />
+                <span>Cartão de Débito</span>
               </div>
-              <div className="flex items-center text-sm text-gray-600">
-                <Shield className="w-5 h-5 text-brand-red mr-2" />
-                <span>Garantia 30 dias</span>
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <DollarSign className="w-4 h-4 text-brand-red" />
+                <span>Dinheiro</span>
               </div>
-              <div className="flex items-center text-sm text-gray-600">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                <span>Produto Original</span>
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <Package className="w-4 h-4 text-brand-red" />
+                <span>PIX</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <p className="text-gray-700 leading-relaxed">{product.description}</p>
-          </div>
-          
-          {/* Quantity Selection */}
           <div className="mb-6">
             <label className="block text-sm font-medium text-primary mb-2">
               Selecione a Quantidade
@@ -232,7 +278,6 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Stock Warning */}
           {product.stockCount < 10 && (
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
               <div className="flex items-center text-orange-600">

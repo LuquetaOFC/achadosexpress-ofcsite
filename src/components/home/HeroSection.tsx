@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ShoppingBag, Star, TrendingUp, Shield, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ShoppingBag, Star, Shield, Package, Clock, CheckCircle, TrendingUp, Award } from 'lucide-react';
 
 const banners = [
   {
     id: 1,
     imageUrl: 'https://i.pinimg.com/736x/0f/71/de/0f71debd1f63c2a499055adf71793b62.jpg',
     title: 'Transforme sua Vida',
-    subtitle: 'Soluções inovadoras para seu dia a dia',
+    subtitle: 'Produtos exclusivos com resultados comprovados',
     ctaText: 'Explorar Agora',
     ctaLink: '/categoria/dia-a-dia',
+    benefits: [
+      'Mais de 50.000 clientes satisfeitos',
+      'Resultados garantidos ou seu dinheiro de volta',
+      'Entrega expressa em até 3 dias'
+    ],
     stats: [
-      { icon: ShoppingBag, value: '10k+', label: 'Clientes' },
-      { icon: Star, value: '4.8', label: 'Avaliação' },
+      { icon: ShoppingBag, value: '50k+', label: 'Clientes Satisfeitos' },
+      { icon: Star, value: '4.8', label: 'Avaliação Média' },
       { icon: Shield, value: '100%', label: 'Garantia' }
     ]
   },
@@ -20,11 +25,16 @@ const banners = [
     id: 2,
     imageUrl: 'https://i.pinimg.com/736x/8c/5b/c0/8c5bc0f2bebbc514408bd214343e6af7.jpg',
     title: 'Saúde e Beleza',
-    subtitle: 'Produtos premium para seu bem-estar',
+    subtitle: 'Produtos premium testados e aprovados',
     ctaText: 'Ver Produtos',
     ctaLink: '/categoria/saude-beleza',
+    benefits: [
+      'Fórmulas exclusivas e naturais',
+      'Resultados visíveis em poucos dias',
+      'Testado dermatologicamente'
+    ],
     stats: [
-      { icon: Clock, value: '24h', label: 'Entrega' },
+      { icon: Clock, value: '24h', label: 'Envio Rápido' },
       { icon: Star, value: '4.9', label: 'Avaliação' },
       { icon: TrendingUp, value: '98%', label: 'Recompra' }
     ]
@@ -33,11 +43,16 @@ const banners = [
     id: 3,
     imageUrl: 'https://i.pinimg.com/736x/b7/e9/4c/b7e94cfb0990b99942c23e769633343f.jpg',
     title: 'Mais Energia',
-    subtitle: 'Estimulantes naturais para sua vitalidade',
+    subtitle: 'Estimulantes naturais com eficácia comprovada',
     ctaText: 'Descobrir',
     ctaLink: '/categoria/estimulantes',
+    benefits: [
+      'Resultados desde a primeira dose',
+      'Sem efeitos colaterais',
+      'Aprovado pela ANVISA'
+    ],
     stats: [
-      { icon: ShoppingBag, value: '8k+', label: 'Clientes' },
+      { icon: Award, value: '1º', label: 'Mais Vendido' },
       { icon: Star, value: '4.7', label: 'Avaliação' },
       { icon: Shield, value: '100%', label: 'Garantia' }
     ]
@@ -103,12 +118,22 @@ const HeroSection: React.FC = () => {
               {/* Content */}
               <div className="absolute inset-0 flex items-center px-4 md:px-12">
                 <div className="max-w-2xl">
-                  <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-6 leading-tight">
+                  <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4 leading-tight">
                     {banner.title}
                   </h2>
-                  <p className="text-base md:text-xl text-white/90 mb-4 md:mb-8">
+                  <p className="text-base md:text-xl text-white/90 mb-4 md:mb-6">
                     {banner.subtitle}
                   </p>
+                  
+                  {/* Benefits */}
+                  <div className="space-y-2 mb-6">
+                    {banner.benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-center text-white/90">
+                        <CheckCircle className="w-5 h-5 text-brand-red mr-2 flex-shrink-0" />
+                        <span className="text-sm md:text-base">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
                   
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-2 md:gap-6 mb-6 md:mb-8">
