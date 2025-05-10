@@ -27,10 +27,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
     return () => clearInterval(interval);
   }, []);
 
-  // 5-minute countdown timer effect
+  // 30-minute countdown timer effect
   useEffect(() => {
     const endTime = new Date();
-    endTime.setMinutes(endTime.getMinutes() + 5);
+    endTime.setMinutes(endTime.getMinutes() + 30);
 
     const updateTimer = () => {
       const now = new Date();
@@ -38,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
       
       if (diff <= 0) {
         // Reset timer when it reaches 0
-        endTime.setMinutes(endTime.getMinutes() + 5);
+        endTime.setMinutes(endTime.getMinutes() + 30);
       }
       
       const minutes = Math.floor(diff / (1000 * 60));
@@ -134,7 +134,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
         {/* Dynamic Social Proof */}
         <div className="flex items-center text-xs text-gray-600 mb-2">
           <Users className="w-3 h-3 text-brand-red flex-shrink-0 mr-1" />
-          <span className="truncate">{recentViews} pessoas viram este produto</span>
+          <span className="truncate">{recentViews} pessoas estão vendo agora</span>
         </div>
 
         {/* Product Title */}

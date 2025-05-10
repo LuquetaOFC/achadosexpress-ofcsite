@@ -16,10 +16,10 @@ const ProductPage: React.FC = () => {
   
   const product = getProductById(id || '');
   
-  // 5-minute countdown timer effect
+  // 30-minute countdown timer effect
   useEffect(() => {
     const endTime = new Date();
-    endTime.setMinutes(endTime.getMinutes() + 5);
+    endTime.setMinutes(endTime.getMinutes() + 30);
 
     const updateTimer = () => {
       const now = new Date();
@@ -27,7 +27,7 @@ const ProductPage: React.FC = () => {
       
       if (diff <= 0) {
         // Reset timer when it reaches 0
-        endTime.setMinutes(endTime.getMinutes() + 5);
+        endTime.setMinutes(endTime.getMinutes() + 30);
       }
       
       const minutes = Math.floor(diff / (1000 * 60));
@@ -79,6 +79,12 @@ const ProductPage: React.FC = () => {
     const originalTotal = product.originalPrice * variant.quantity;
     const savings = originalTotal - variant.price;
     return savings;
+  };
+
+  const handleWhatsAppClick = () => {
+    const message = `Olá! Gostaria de saber mais sobre o produto ${product.name}. Vi no site que custa R$ ${currentVariant.price.toFixed(2)} ${currentVariant.quantity > 1 ? `(${currentVariant.quantity} unidades)` : ''}.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/5511955573233?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -247,7 +253,7 @@ const ProductPage: React.FC = () => {
             </a>
 
             <button
-              onClick={() => window.dispatchEvent(new CustomEvent('toggle-chat'))}
+              onClick={handleWhatsAppClick}
               className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-md font-medium transition-colors"
             >
               <MessageCircle size={24} />
