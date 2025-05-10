@@ -10,6 +10,7 @@
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
   }
   
   body {
@@ -31,6 +32,11 @@
   input, select, textarea {
     @apply text-base;
     font-size: 16px !important;
+  }
+
+  /* Prevent text scaling */
+  * {
+    -webkit-text-size-adjust: none;
   }
 }
 
@@ -160,4 +166,14 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Bottom safe area padding for fixed elements */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Top safe area padding for fixed elements */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
 }

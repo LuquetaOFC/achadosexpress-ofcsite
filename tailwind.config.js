@@ -32,6 +32,15 @@ export default {
       fontSize: {
         'base-mobile': '16px',
       },
+      height: {
+        screen: ['100vh /* fallback */', '100dvh'],
+      },
+      minHeight: {
+        screen: ['100vh /* fallback */', '100dvh'],
+      },
+      maxHeight: {
+        screen: ['100vh /* fallback */', '100dvh'],
+      },
     },
     screens: {
       'xs': '375px',
