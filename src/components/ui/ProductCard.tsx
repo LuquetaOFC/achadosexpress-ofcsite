@@ -97,17 +97,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
           </div>
         </div>
 
-        {/* Discount Badge */}
+        {/* Discount Badge - Repositioned and Restyled */}
         {discountPercentage > 0 && (
-          <div className="absolute top-2 left-2 bg-brand-red text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
-            ECONOMIZE {discountPercentage}% HOJE
+          <div className="absolute top-2 left-2 bg-brand-red/90 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-lg shadow-sm">
+            -{discountPercentage}%
           </div>
         )}
 
         {/* Stock Status */}
         {stockStatus && (
-          <div className="absolute bottom-2 left-2 right-2 bg-brand-orange/90 text-white text-sm font-medium rounded-full px-4 py-2 text-center animate-pulse shadow-lg">
-            ⚡ URGENTE: {stockStatus}
+          <div className="absolute bottom-2 left-2 right-2 bg-brand-orange/90 text-white text-xs font-medium rounded-full px-3 py-1.5 text-center animate-pulse shadow-sm">
+            ⚡ {stockStatus}
           </div>
         )}
 
@@ -132,7 +132,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
       {/* Content Section */}
       <div className="p-4">
         {/* Dynamic Social Proof */}
-        <div className="flex items-center text-xs text-gray-600 mb-2 animate-pulse">
+        <div className="flex items-center text-xs text-gray-600 mb-2">
           <Users className="w-3 h-3 text-brand-red flex-shrink-0 mr-1" />
           <span className="truncate">{recentViews} pessoas viram este produto</span>
         </div>
@@ -149,8 +149,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, size = 'medium' }) =
               <span className="text-xs text-gray-500 line-through">
                 De R$ {product.originalPrice.toFixed(2)}
               </span>
-              <span className="text-xs text-green-600 font-medium bg-green-50 px-3 py-1 rounded-full">
-                Economia de R$ {(product.originalPrice - product.price).toFixed(2)}
+              <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-0.5 rounded-lg">
+                -{discountPercentage}%
               </span>
             </div>
           )}

@@ -4,17 +4,16 @@ import { Menu, X, Search, User, LogOut, Phone, Mail, Clock, MapPin } from 'lucid
 import Logo from '../ui/Logo';
 import { useSearch } from '../../context/SearchContext';
 import { useAuth } from '../../context/AuthContext';
+import Sidebar from './Sidebar';
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { setSearchQuery } = useSearch();
   const { user, logout } = useAuth();
-  
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +29,7 @@ const Header: React.FC = () => {
   }, []);
   
   useEffect(() => {
-    setIsMenuOpen(false);
+    setIsSidebarOpen(false);
     setIsUserMenuOpen(false);
   }, [location]);
   
@@ -94,10 +93,10 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button 
               className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
-              onClick={toggleMenu}
+              onClick={() => setIsSidebarOpen(true)}
               aria-label="Menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <Menu size={24} />
             </button>
             
             {/* Logo */}
@@ -201,66 +200,12 @@ const Header: React.FC = () => {
           </div>
         </div>
       </header>
-      
-      {/* Mobile Menu */}
-      <div 
-        className={`fixed inset-0 bg-white z-40 transition-transform duration-300 transform ${
-          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        } pt-24 md:hidden`}
-      >
-        <nav className="container mx-auto px-4 py-6">
-          <div className="space-y-6">
-            <Link to="/" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-              Home
-            </Link>
-            <Link to="/categoria/saude-beleza" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-              Saúde e Beleza
-            </Link>
-            <Link to="/categoria/dia-a-dia" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-              Achadinhos
-            </Link>
-            <Link to="/categoria/estimulantes" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-              Estimulantes
-            </Link>
-            
-            <hr className="border-gray-200" />
-            
-            {!user && (
-              <div className="space-y-4">
-                <Link to="/login" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-                  Login
-                </Link>
-                <Link to="/cadastro" className="block text-lg font-medium text-primary hover:text-brand-red transition-colors">
-                  Cadastrar
-                </Link>
-              </div>
-            )}
 
-            {/* Mobile Contact Info */}
-            <div className="pt-6 border-t border-gray-200">
-              <h3 className="text-sm font-medium text-gray-500 mb-4">Contato</h3>
-              <div className="space-y-4">
-                <div className="flex items-center text-primary">
-                  <Phone size={18} className="mr-3 text-brand-red" />
-                  Atendimento Online
-                </div>
-                <div className="flex items-center text-primary">
-                  <Mail size={18} className="mr-3 text-brand-red" />
-                  contato@achadinhosexpress.com.br
-                </div>
-                <div className="flex items-center text-primary">
-                  <Clock size={18} className="mr-3 text-brand-red" />
-                  Seg - Sex, 9h às 18h
-                </div>
-                <div className="flex items-center text-primary">
-                  <MapPin size={18} className="mr-3 text-brand-red" />
-                  São Paulo, SP
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+      {/* Add the Sidebar component */}
+      <Sidebar 
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
     </>
   );
 };

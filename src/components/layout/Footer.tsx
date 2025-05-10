@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Facebook, 
   Instagram, 
-  Twitter, 
   Mail, 
   MessageCircle, 
   CreditCard, 
@@ -93,14 +91,14 @@ const Footer: React.FC = () => {
             
             <h3 className="text-lg font-bold mt-6 mb-4 text-primary">Redes Sociais</h3>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="text-brand-red hover:text-brand-orange transition-colors">
-                <Facebook size={24} />
-              </a>
-              <a href="https://instagram.com" className="text-brand-red hover:text-brand-orange transition-colors">
+              <a 
+                href="https://www.instagram.com/achadinhosexpress.oficial/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-brand-red hover:text-brand-orange transition-colors"
+                aria-label="Siga-nos no Instagram"
+              >
                 <Instagram size={24} />
-              </a>
-              <a href="https://twitter.com" className="text-brand-red hover:text-brand-orange transition-colors">
-                <Twitter size={24} />
               </a>
             </div>
           </div>
