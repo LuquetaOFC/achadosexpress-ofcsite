@@ -22,6 +22,17 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onClose }) => {
 
   const API_URL = 'https://lucaszatti2004.app.n8n.cloud/webhook/d75c56db-5f67-47e3-afed-3d6e6dc7aab0';
 
+  useEffect(() => {
+    const handleToggleChat = () => {
+      if (!isOpen) {
+        onClose();
+      }
+    };
+
+    window.addEventListener('toggle-chat', handleToggleChat);
+    return () => window.removeEventListener('toggle-chat', handleToggleChat);
+  }, [isOpen, onClose]);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -50,17 +61,14 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onClose }) => {
   }, []);
 
   const validateResponse = (data: any): string => {
-    // Check if data is null or undefined
     if (!data) {
       return 'Desculpe, não recebi uma resposta válida do servidor. Por favor, tente novamente.';
     }
 
-    // Check if response has the expected text field
     if (typeof data.text === 'string' && data.text.trim()) {
       return data.text;
     }
 
-    // If text exists but is not a string, try to convert it
     if (data.text !== undefined) {
       try {
         const stringResponse = String(data.text).trim();
@@ -72,7 +80,6 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onClose }) => {
       }
     }
 
-    // Default error message
     return 'Desculpe, recebi uma resposta em formato inesperado. Por favor, tente novamente.';
   };
 
