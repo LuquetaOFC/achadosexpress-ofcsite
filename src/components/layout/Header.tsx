@@ -1,212 +1,110 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Search, User, LogOut, Phone, Mail, Clock, MapPin } from 'lucide-react';
-import Logo from '../ui/Logo';
-import { useSearch } from '../../context/SearchContext';
-import { useAuth } from '../../context/AuthContext';
-import Sidebar from './Sidebar';
+import { Link, useLocation } from 'react-router-dom';
+import { User, Menu, X } from 'lucide-react';
+
+const promos = [
+  { icon: "💝", text: "PAGUE NA ENTREGA" },
+  { icon: "🔥", text: "OFERTAS ÚNICAS" },
+  { icon: "🚚", text: "FRETE GRÁTIS" }
+];
 
 const Header: React.FC = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [promoIndex, setPromoIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-  const { setSearchQuery } = useSearch();
-  const { user, logout } = useAuth();
-  
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    const timer = setInterval(() => {
+      setPromoIndex((prevIndex) => (prevIndex + 1) % promos.length);
+    }, 3000);
     
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => clearInterval(timer);
   }, []);
-  
-  useEffect(() => {
-    setIsSidebarOpen(false);
-    setIsUserMenuOpen(false);
-  }, [location]);
-  
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const query = formData.get('search') as string;
-    if (query.trim()) {
-      setSearchQuery(query.trim());
-    }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate('/');
-    } catch (error) {
-      console.error('Erro ao fazer logout:', error);
-    }
-  };
-  
   return (
-    <>
-      {/* Top Bar */}
-      <div className="bg-brand-red text-white py-2 hidden md:block">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center divide-x divide-white/20">
-              <div className="flex items-center space-x-6 pr-6">
-                <span className="flex items-center hover:text-white/90 transition-colors text-sm">
-                  <Phone size={16} className="mr-2" />
-                  Atendimento Online
-                </span>
-                <span className="flex items-center hover:text-white/90 transition-colors text-sm">
-                  <Mail size={16} className="mr-2" />
-                  contato@achadinhosexpress.com.br
-                </span>
-              </div>
-              <div className="flex items-center space-x-6 px-6">
-                <div className="flex items-center text-sm">
-                  <Clock size={16} className="mr-2" />
-                  Seg - Sex, 9h às 18h
-                </div>
-                <div className="flex items-center text-sm">
-                  <MapPin size={16} className="mr-2" />
-                  São Paulo, SP
-                </div>
-              </div>
-            </div>
-            <div className="text-sm font-medium bg-white/10 px-4 py-1 rounded-full">
-              🚚 Frete Grátis para todo Brasil!
-            </div>
+    <header className="sticky top-0 z-50 bg-white">
+      {/* Promo Bar */}
+      <div className="bg-[#002f6c] text-white py-2">
+        <div className="flex justify-center items-center">
+          <div 
+            className="transition-opacity duration-500 flex items-center"
+          >
+            <span className="mr-2 text-xl">{promos[promoIndex].icon}</span>
+            <span className="text-sm font-medium">{promos[promoIndex].text}</span>
           </div>
         </div>
       </div>
-
-      {/* Main Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
-              onClick={() => setIsSidebarOpen(true)}
-              aria-label="Menu"
-            >
-              <Menu size={24} />
-            </button>
-            
-            {/* Logo */}
-            <div className="md:ml-0 mx-auto md:mx-0">
-              <Logo size="medium" />
-            </div>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8 items-center ml-12">
-              <Link to="/" className="text-sm font-medium text-primary hover:text-brand-red transition-colors">
-                Home
-              </Link>
-              <Link to="/categoria/saude-beleza" className="text-sm font-medium text-primary hover:text-brand-red transition-colors">
-                Saúde e Beleza
-              </Link>
-              <Link to="/categoria/dia-a-dia" className="text-sm font-medium text-primary hover:text-brand-red transition-colors">
-                Achadinhos
-              </Link>
-              <Link to="/categoria/estimulantes" className="text-sm font-medium text-primary hover:text-brand-red transition-colors">
-                Estimulantes
-              </Link>
-            </nav>
-            
-            {/* Search and Auth */}
-            <div className="flex items-center space-x-6">
-              {/* Search - Desktop */}
-              <form onSubmit={handleSearch} className="hidden md:flex relative">
-                <input 
-                  type="search"
-                  name="search"
-                  placeholder="Buscar produtos..." 
-                  className="w-64 rounded-full bg-gray-100 pl-5 pr-12 py-2.5 text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent"
-                />
-                <button 
-                  type="submit" 
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-brand-red transition-colors"
-                >
-                  <Search size={18} />
-                </button>
-              </form>
-
-              {/* Auth Buttons */}
-              {user ? (
-                <div className="relative">
-                  <button
-                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                    className="flex items-center space-x-3 text-sm font-medium text-primary hover:text-brand-red transition-colors p-2 hover:bg-gray-100 rounded-full"
-                  >
-                    <User size={24} />
-                    <span className="hidden md:block">{user.email?.split('@')[0]}</span>
-                  </button>
-
-                  {/* User Menu Dropdown */}
-                  {isUserMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 focus:outline-none">
-                      <button
-                        onClick={handleLogout}
-                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      >
-                        <LogOut size={18} className="mr-2" />
-                        Sair
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="flex items-center space-x-4">
-                  <Link
-                    to="/login"
-                    className="text-sm font-medium text-primary hover:text-brand-red transition-colors hidden md:block"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    to="/cadastro"
-                    className="text-sm font-medium text-white bg-brand-red hover:bg-brand-orange px-6 py-2.5 rounded-full transition-colors shadow-sm"
-                  >
-                    Cadastrar
-                  </Link>
-                </div>
-              )}
-            </div>
+      
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={toggleMenu}
+            className="lg:hidden text-gray-600 hover:text-gray-900"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          
+          {/* Logo */}
+          <Link to="/" className="text-[#002f6c] font-bold text-xl md:text-2xl">
+            Achados Express
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex space-x-6">
+            <Link to="/" className={`text-sm hover:text-[#28a745] transition-colors ${location.pathname === '/' ? 'font-bold' : ''}`}>
+              Início
+            </Link>
+            <Link to="/catalogo" className={`text-sm hover:text-[#28a745] transition-colors ${location.pathname === '/catalogo' ? 'font-bold bg-[#002f6c] text-white px-4 py-1 rounded' : ''}`}>
+              Catálogo
+            </Link>
+            <Link to="/fale-conosco" className={`text-sm hover:text-[#28a745] transition-colors ${location.pathname === '/fale-conosco' ? 'font-bold bg-[#002f6c] text-white px-4 py-1 rounded' : ''}`}>
+              Entrar em contato
+            </Link>
           </div>
           
-          {/* Mobile Search */}
-          <div className="md:hidden pb-4">
-            <form onSubmit={handleSearch} className="relative">
-              <input 
-                type="search"
-                name="search"
-                placeholder="Buscar produtos..." 
-                className="w-full rounded-full bg-gray-100 pl-5 pr-12 py-2.5 text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent"
-              />
-              <button 
-                type="submit" 
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-brand-red transition-colors"
-              >
-                <Search size={18} />
-              </button>
-            </form>
+          {/* User Icon */}
+          <div className="flex items-center">
+            <Link to="/perfil" className="hover:text-[#28a745] transition-colors">
+              <User size={20} />
+            </Link>
           </div>
         </div>
-      </header>
 
-      {/* Add the Sidebar component */}
-      <Sidebar 
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
-    </>
+        {/* Mobile Menu */}
+        <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+          <div className="absolute left-0 right-0 bg-white border-b border-gray-200 px-4 py-2 shadow-lg">
+            <div className="flex flex-col space-y-2">
+              <Link 
+                to="/" 
+                className={`p-2 rounded-md ${location.pathname === '/' ? 'bg-[#002f6c] text-white' : 'hover:bg-gray-100'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Início
+              </Link>
+              <Link 
+                to="/catalogo" 
+                className={`p-2 rounded-md ${location.pathname === '/catalogo' ? 'bg-[#002f6c] text-white' : 'hover:bg-gray-100'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Catálogo
+              </Link>
+              <Link 
+                to="/fale-conosco" 
+                className={`p-2 rounded-md ${location.pathname === '/fale-conosco' ? 'bg-[#002f6c] text-white' : 'hover:bg-gray-100'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Entrar em contato
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 };
 
