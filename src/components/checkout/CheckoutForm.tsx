@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import InputMask from 'react-input-mask';
 import Button from '../ui/Button';
 import { Product } from '../../types';
@@ -37,6 +37,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onClose, product, selectedV
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [fieldsDisabled, setFieldsDisabled] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -137,9 +138,11 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onClose, product, selectedV
         throw new Error('Erro ao enviar pedido');
       }
 
-      // Show success message and close form
-      alert('Pedido enviado com sucesso! Em breve entraremos em contato.');
-      handleClose();
+      setShowSuccessPopup(true);
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        handleClose();
+      }, 3000);
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('Erro ao enviar pedido. Por favor, tente novamente.');
@@ -365,6 +368,23 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ onClose, product, selectedV
           </form>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 flex items-center justify-center z-[60]">
+          <div className="bg-white rounded-lg p-6 shadow-xl max-w-md w-full mx-4 relative">
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-green-100 rounded-full p-3">
+                <Check className="w-8 h-8 text-green-500" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold text-center mb-2">Pedido Realizado com Sucesso!</h3>
+            <p className="text-gray-600 text-center">
+              Em breve entraremos em contato via WhatsApp para confirmar seu pedido.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
